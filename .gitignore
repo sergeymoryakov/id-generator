@@ -1,0 +1,20 @@
+# Ignore the cache folder
+.cache/
+
+# Ignore the dist folder
+dist/
+
+# Ignore the drafts folder
+drafts/
+
+# Ignore the prod folder
+prod/
+
+# Ignore the node_modules folder
+node_modules/
+
+# Ignore the .parcel-cache folder
+.parcel-cache/
+
+# Ignore specific files
+.DS_Store
