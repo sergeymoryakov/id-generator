@@ -1,0 +1,13 @@
+html {
+    font-family: ;
+    font-size: 1em;
+    color: #1a1f16;
+    background-color: #ededed;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 4rem;
+    max-width: 800px;
+    background-color: #fff;
+}
