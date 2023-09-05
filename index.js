@@ -1,12 +1,79 @@
-const DEFAULT_LENGHT = 12;
+const DEFAULT_LENGHT = 20;
 
 const input1Node = document.getElementById("input1");
 const id1Node = document.getElementById("id1");
 const id1BtnNode = document.getElementById("id1Btn");
+const input2Node = document.getElementById("input2");
+const id2Node = document.getElementById("id2");
+const id2BtnNode = document.getElementById("id2Btn");
+
+const testBtnNode = document.getElementById("testBtn");
+
+const capitalLetters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+];
+const lowercaseLetters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+];
+const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const specialSymbols = ["!", "@", "#", "$", "%", "&", "*", "_"];
+
+const randomSymbol =
+    specialSymbols[Math.floor(Math.random() * specialSymbols.length)];
 
 function generateID(length) {
     return [...Array(length)]
-        .map(() => (~~(Math.random() * 36)).toString(36))
+        .map(() => Math.floor(Math.random() * 36).toString(36))
         .join("");
 }
 
@@ -25,21 +92,14 @@ id1BtnNode.addEventListener("click", () => {
     id1Node.innerText = newId1;
 });
 
-// import { v4 as uuidv4 } from "./node_modules/uuid";
-
-// console.log(uuidv4());
-
-// const generateUniqueId = require("generate-unique-id");
-// const id1 = generateUniqueId();
-// const id2 = generateUniqueId({
-//     length: 8,
-//     useLetters: false,
-// });
-// const id3 = generateUniqueId({
-//     includeSymbols: ["@", "$", "#"],
-//     excludeSymbols: ["Z", "z"],
-// });
-
-// console.log(`New ID1: ${id1}.`);
-// console.log(`New ID2: ${id2}.`);
-// console.log(`New ID3: ${id3}.`);
+testBtnNode.addEventListener("click", () => {
+    const y = Math.random();
+    console.log("Math.random() = ", y);
+    // const c = (~~(y * 36)).toString(36);
+    const a = y * 36;
+    const b = Math.floor(y * 36);
+    const c = Math.floor(y * 36).toString(36);
+    console.log("Math.random() * 36 = ", a);
+    console.log("~~(Math.random() * 36) = ", b);
+    console.log("(~~(Math.random() * 36)).toString(36) = ", c);
+});

@@ -10,11 +10,23 @@
     </head>
     <body>
         <div class="container">
-            <h2>Unique ID generator</h2>
+            <h2>Unique ID</h2>
             <p>Length:</p>
             <input id="input1" type="text" />
             <p>characters: <span id="id1"></span></p>
             <button id="id1Btn">Generate New</button>
+            <h2>Custom Format ID</h2>
+            <p>Structure</p>
+            <input id="input2" type="text" />
+            <p>characters: <span id="id2"></span></p>
+            <button id="id2Btn">Generate New</button>
+            <br />
+            <p>N/n - numbers (0...9)</p>
+            <p>C/c - capital letters (A...Z)</p>
+            <p>L/l - lowercase letters (a...z)</p>
+            <p>S/s - special characters (!, @, #, $, %, &, *, _)</p>
+
+            <button id="testBtn">Test</button>
         </div>
         <script type="module" src="index.js"></script>
     </body>
