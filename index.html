@@ -18,7 +18,7 @@
         <div class="container">
             <div class="id-wrapper">
                 <h2>String-type Password/ID</h2>
-                <label for="input1">Select length (1...30) here:</label>
+                <label for="input1">Select ID length (1...30) here:</label>
                 <input
                     class="input1"
                     id="input1"
@@ -30,15 +30,16 @@
                 <h3>Random password:</h3>
                 <div class="id" id="id1"></div>
                 <button class="new-btn" id="id1Btn">Generate New</button>
-                <!-- <br /> -->
                 <p>
-                    You may customize element types usage by de-selecting below:
+                    You may customize element types usage by de-selecting
+                    options below:
                 </p>
                 <ul class="types-list">
                     <li>
                         <input
+                            class="checkbox-1"
                             type="checkbox"
-                            id="cbDigits"
+                            id="digits"
                             name="cb-digits"
                             value="d"
                             checked
@@ -47,8 +48,9 @@
                     </li>
                     <li>
                         <input
+                            class="checkbox-1"
                             type="checkbox"
-                            id="cbCapitals"
+                            id="capitals"
                             name="cb-capitals"
                             value="c"
                             checked
@@ -58,8 +60,9 @@
                     </li>
                     <li>
                         <input
+                            class="checkbox-1"
                             type="checkbox"
-                            id="cbLowercases"
+                            id="lowercases"
                             name="cb-lowercases"
                             value="l"
                             checked
@@ -70,19 +73,20 @@
                     </li>
                     <li>
                         <input
+                            class="checkbox-1"
                             type="checkbox"
-                            id="cbSymbols"
+                            id="symbols"
                             name="cb-symbols"
                             value="s"
                             checked
                         />
                         <label for="cb-symbols">
-                            Symbols (!, @, #, $, %, &, *, _)</label
+                            Symbols (!, @, #, $, %, &, *)</label
                         >
                     </li>
                 </ul>
             </div>
-            <div class="id-wrapper">
+            <!-- <div class="id-wrapper">
                 <h2>Custom-format Password/ID</h2>
                 <p>Customize format:</p>
                 <input
@@ -103,7 +107,7 @@
                 <div class="id" id="id2"></div>
                 <button class="new-btn" id="id2Btn">Generate New</button>
             </div>
-            <button id="testBtn">Test</button>
+            <button id="testBtn">Test</button> -->
         </div>
         <script type="module" src="index.js"></script>
     </body>
