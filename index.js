@@ -9,7 +9,7 @@ const id2BtnNode = document.getElementById("id2Btn");
 
 const testBtnNode = document.getElementById("testBtn");
 
-const capitalLetters = [
+const capitals = [
     "A",
     "B",
     "C",
@@ -37,7 +37,7 @@ const capitalLetters = [
     "Y",
     "Z",
 ];
-const lowercaseLetters = [
+const lowercases = [
     "a",
     "b",
     "c",
@@ -65,11 +65,10 @@ const lowercaseLetters = [
     "y",
     "z",
 ];
-const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const specialSymbols = ["!", "@", "#", "$", "%", "&", "*", "_"];
+const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const symbols = ["!", "@", "#", "$", "%", "&", "*", "_"];
 
-const randomSymbol =
-    specialSymbols[Math.floor(Math.random() * specialSymbols.length)];
+const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
 
 function generateID(length) {
     return [...Array(length)]

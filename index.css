@@ -1,13 +1,87 @@
 html {
-    /* font-family: ; */
-    font-size: 1em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.75em;
     color: #1a1f16;
     background-color: #ededed;
 }
 
 .container {
     margin: 0 auto;
-    padding: 4rem;
-    max-width: 800px;
+    padding: 1rem;
+    /* max-width: 800px; */
     background-color: #fff;
+}
+
+@media (min-width: 260px) {
+    html {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 360px) {
+    html {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 2rem;
+        max-width: 450px;
+    }
+}
+
+h2 {
+    margin-bottom: 0.5em;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 0.5em;
+}
+
+.input1 {
+    margin-bottom: 0.5em;
+    line-height: 1.5em;
+    text-align: center;
+    border: 1px solid #1a1f16;
+}
+
+.input2 {
+    margin-bottom: 0.5em;
+    width: calc(100% - 9px);
+    line-height: 1.5em;
+    text-align: center;
+    border: 1px solid #1a1f16;
+}
+
+.id-wrapper {
+    margin-bottom: 1em;
+    /* background-color: #ededed; */
+    /* border: 1px dashed red; */
+}
+
+.id {
+    margin-bottom: 0.5em;
+    min-width: 35ex;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    background-color: #ededed;
+}
+
+.new-btn {
+    margin-bottom: 0.5em;
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    background-color: #fff;
+    border: 1px solid #1a1f16;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.types-list {
+    margin-bottom: 0.5em;
 }

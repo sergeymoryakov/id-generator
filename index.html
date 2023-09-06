@@ -4,28 +4,103 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="m-gold-s.png" type="image/png" />
-        <title>ID Generator</title>
+        <title>Password/ID Generator</title>
         <link rel="stylesheet" href="reset.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="index.css" />
     </head>
     <body>
         <div class="container">
-            <h2>Unique ID</h2>
-            <p>Length:</p>
-            <input id="input1" type="text" />
-            <p>characters: <span id="id1"></span></p>
-            <button id="id1Btn">Generate New</button>
-            <h2>Custom Format ID</h2>
-            <p>Structure</p>
-            <input id="input2" type="text" />
-            <p>characters: <span id="id2"></span></p>
-            <button id="id2Btn">Generate New</button>
-            <br />
-            <p>N/n - numbers (0...9)</p>
-            <p>C/c - capital letters (A...Z)</p>
-            <p>L/l - lowercase letters (a...z)</p>
-            <p>S/s - special characters (!, @, #, $, %, &, *, _)</p>
-
+            <div class="id-wrapper">
+                <h2>String-type Password/ID</h2>
+                <label for="input1">Select length (1...30):</label>
+                <input
+                    class="input1"
+                    id="input1"
+                    name="input1"
+                    type="number"
+                    min="1"
+                    max="30"
+                />
+                <div class="id" id="id1"></div>
+                <button class="new-btn" id="id1Btn">Generate New</button>
+                <!-- <br /> -->
+                <p>
+                    You may customize element types usage by de-selecting below:
+                </p>
+                <ul class="types-list">
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="cbDigits"
+                            name="cb-digits"
+                            value="d"
+                            checked
+                        />
+                        <label for="cb-digits"> Digits (0...9)</label><br />
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="cbCapitals"
+                            name="cb-capitals"
+                            value="c"
+                            checked
+                        />
+                        <label for="cb-capitals"> Capital Letters (A...Z)</label
+                        ><br />
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="cbLowercases"
+                            name="cb-lowercases"
+                            value="l"
+                            checked
+                        />
+                        <label for="cb-lowercases">
+                            Lowercase Letters (a...z)</label
+                        ><br />
+                    </li>
+                    <li>
+                        <input
+                            type="checkbox"
+                            id="cbSymbols"
+                            name="cb-symbols"
+                            value="s"
+                            checked
+                        />
+                        <label for="cb-symbols">
+                            Symbols (!, @, #, $, %, &, *, _)</label
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="id-wrapper">
+                <h2>Custom-format Password/ID</h2>
+                <p>Customize format:</p>
+                <input
+                    class="input2"
+                    id="input2"
+                    type="text"
+                    name="input2"
+                    value="DDD-CCCC-CCDD"
+                />
+                <div class="id" id="id2"></div>
+                <button class="new-btn" id="id2Btn">Generate New</button>
+                <p>Legend:</p>
+                <p>D - Digits (0...9)</p>
+                <p>C - Capital Letters (A...Z)</p>
+                <p>L - Lowercase Letters (a...z)</p>
+                <p>A - Alfanumeric (all above)</p>
+                <p>S - Symbols (!, @, #, $, %, &, *, _)</p>
+                <p>X - Alfanumeric & Symbols (everything above)</p>
+            </div>
             <button id="testBtn">Test</button>
         </div>
         <script type="module" src="index.js"></script>
