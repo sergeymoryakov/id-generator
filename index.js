@@ -59,9 +59,10 @@ window.lowercases = [
 window.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 window.symbols = ["!", "@", "#", "$", "%", "&", "*"];
 
-// FOR TEST PURPOSE:
-// const charactersData = capitals.concat("", lowercases, digits, symbols);
-let selectedArray = [];
+const charactersAlfa = digits.concat("", capitals, lowercases);
+const charactersXray = charactersAlfa.concat("", symbols);
+console.log("charactersXray: ", charactersXray);
+let customCharactersArray = [];
 
 const input1Node = document.getElementById("input1");
 const id1Node = document.getElementById("id1");
@@ -83,31 +84,78 @@ function generateId1(lengthId, array) {
     return newId1;
 }
 
-// Initiate or update charactersData
-function reviseCharactersData() {
-    selectedArray = [];
+// Initiate or update charactersData for string-type ID:
+function updateCustomCharactersArray() {
+    customCharactersArray = [];
+    let atLeastOneChecked = false; // Init a variable to track at least one checkbox is checked
     checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
             const arrayName = checkbox.getAttribute("id");
-            // console.log("arrayName: ", arrayName);
             const affectedArray = window[arrayName];
-            // console.log(affectedArray);
-            selectedArray = selectedArray.concat("", affectedArray);
+            customCharactersArray = customCharactersArray.concat(affectedArray);
+            atLeastOneChecked = true;
         }
     });
-    console.log(selectedArray);
+    // Make sure at least one checkbox is checked
+    if (!atLeastOneChecked) {
+        alert("Please select at least one option.");
+        checkboxes[0].checked = true;
+        updateCustomCharactersArray(); // Recall self to make sure customCharactersArray is properly updated
+        return;
+    }
+    console.log(customCharactersArray);
 }
-// let newArray = [];
-// if (checkbox.checked == true) {
-// }
-// console.log("checkbox.id: ", checkbox.id);
-// console.log("checkbox.value: ", checkbox.value);
-// console.log("checkbox.checked: ", checkbox.checked);
+
+function generateCustomID(string) {
+    const capString = string.toUpperCase();
+    let newId2 = "";
+    for (let i = 0; i < capString.length; i++) {
+        switch (capString[i]) {
+            case "D":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "C":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "L":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "A":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "S":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "X":
+                newId2 += "*";
+                // newId2 += capString[i];
+                break;
+            case "-":
+                newId2 += "-";
+                break;
+            case "_":
+                newId2 += "_";
+                break;
+            case ":":
+                newId2 += ":";
+                break;
+            default:
+                console.log("TEST PASSED");
+                newId2 += "=";
+        }
+    }
+    return newId2;
+}
 
 // Initial rendering
 input1Node.value = DEFAULT_LENGHT;
-reviseCharactersData();
-const id1 = generateId1(DEFAULT_LENGHT, selectedArray);
+updateCustomCharactersArray();
+const id1 = generateId1(DEFAULT_LENGHT, customCharactersArray);
 // console.log("ID1: ", id1);
 id1Node.innerText = id1;
 // console.log("id1Node.value: ", input1Node.value);
@@ -116,33 +164,15 @@ id1BtnNode.addEventListener("click", () => {
     id1Node.innerText = "";
     const newLenght = parseInt(input1Node.value);
     console.log("newLenght: ", newLenght);
-    const newId1 = generateId1(newLenght, selectedArray);
+    const newId1 = generateId1(newLenght, customCharactersArray);
     id1Node.innerText = newId1;
 });
 
 checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => reviseCharactersData());
+    checkbox.addEventListener("change", () => updateCustomCharactersArray());
 });
 
-// testBtnNode.addEventListener("click", () => {
-//     const testId = generateId1(10, selectedArray);
-//     console.log(testId);
-// });
-
-// Generate string-type ID based on required length:
-// function generateID(length) {
-//     return [...Array(length)]
-//         .map(() => Math.floor(Math.random() * 36).toString(36))
-//         .join("");
-// }
-
-// TEST: Generate random character based on .toString(36) method:
-// const y = Math.random();
-// console.log("Math.random() = ", y);
-// // const c = (~~(y * 36)).toString(36);
-// const a = y * 36;
-// const b = Math.floor(y * 36);
-// const c = Math.floor(y * 36).toString(36);
-// console.log("Math.random() * 36 = ", a);
-// console.log("~~(Math.random() * 36) = ", b);
-// console.log("(~~(Math.random() * 36)).toString(36) = ", c);
+id2BtnNode.addEventListener("click", () => {
+    // id2Node.innerText = "";
+    id2Node.innerText = generateCustomID(input2Node.value);
+});

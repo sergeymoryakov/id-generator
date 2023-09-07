@@ -86,7 +86,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- <div class="id-wrapper">
+            <div class="id-wrapper">
                 <h2>Custom-format Password/ID</h2>
                 <p>Customize format:</p>
                 <input
@@ -94,20 +94,29 @@
                     id="input2"
                     type="text"
                     name="input2"
-                    value="DDD-CCCC-CCDD"
+                    value="DDD-CCCC:AAAA_LLL"
                 />
                 <p>Legend:</p>
-                <p>D - Digits (0...9)</p>
-                <p>C - Capital Letters (A...Z)</p>
-                <p>L - Lowercase Letters (a...z)</p>
-                <p>A - Alfanumeric (all above)</p>
-                <p>S - Symbols (!, @, #, $, %, &, *, _)</p>
-                <p>X - Alfanumeric & Symbols (everything above)</p>
+                <ul>
+                    <li>'D' - Digits (0-9)</li>
+                    <li>'C' - Capital Letters (A-Z)</li>
+                    <li>'L' - Lowercase Letters (a-z)</li>
+                    <li>
+                        'A' - Alphanumeric (Digits, Capital, and Lowercase
+                        Letters)
+                    </li>
+                    <li>'S' - Symbols (!, @, #, $, %, &, *)</li>
+                    <li>'X' - Alphanumeric & Symbols (A, C, D, L, S)</li>
+                    <li>'-' - Hyphen Divider</li>
+                    <li>'_' - Underscore Divider</li>
+                    <li>':' - Colon Divider</li>
+                </ul>
+
                 <h3>Random password:</h3>
                 <div class="id" id="id2"></div>
                 <button class="new-btn" id="id2Btn">Generate New</button>
             </div>
-            <button id="testBtn">Test</button> -->
+            <button id="testBtn">Test</button>
         </div>
         <script type="module" src="index.js"></script>
     </body>
