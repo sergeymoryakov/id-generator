@@ -1,16 +1,14 @@
 # ID/Password Generator
 
-![ID/Password Generator Logo](./m-gold-s.png)
-
-The ID/Password Generator is a versatile tool designed to generate random strings, passwords, and IDs for various applications, including eCommerce databases. Whether you need realistic-looking part numbers, serial numbers, invoice numbers, or transaction IDs, this app can help you quickly create the data you need.
+The ID/Password Generator is a tool designed to generate random passwords and IDs for various applications, including eCommerce databases. Whether you need realistic-looking part numbers, serial numbers, invoice numbers, or transaction IDs, this app can help you quickly create the data you need.
 
 ## Table of Contents
 
-    -   [ID/Password Generator](#idpassword-generator)
+-   [ID/Password Generator](#idpassword-generator)
     -   [Table of Contents](#table-of-contents)
     -   [Features](#features)
-    -   [String-Type ID/Password](#string-type-idpassword)
-    -   [Custom Format](#custom-format)
+        -   [String-Type ID/Password](#string-type-idpassword)
+        -   [Custom Format](#custom-format)
     -   [Installation](#installation)
     -   [Usage](#usage)
     -   [Contributing](#contributing)
@@ -32,29 +30,33 @@ The ID/Password Generator is a versatile tool designed to generate random string
 
 ## Installation
 
-1. Clone this repository to your local machine: <code>git clone https://github.com/your-username/id-password-generator.git</code>
-2. Navigate to the project directory: <code>cd id-password-generator</code>
+1. Clone this repository to your local machine:
+   <code>git clone https://github.com/your-username/id-password-generator.git</code>
+2. Navigate to the project directory:
+   <code>cd id-password-generator</code>
 3. Open the index.html file in your web browser to use the app.
 
 ## Usage
 
 1. String-Type ID/Password:
- <li>Enter the desired length for your ID/password in the "Select ID length (1...30)" input field.</li>
- <li>Customize the elements you want to include by checking or unchecking the options (digits, capitals, lowercase letters, symbols).</li>
- <li>Click the "Generate New" button to create a random string.</li>
+
+-   Enter the desired length for your ID/password in the "Select ID length (1...30)" input field.
+-   Customize the elements you want to include by checking or unchecking the options (digits, capitals, lowercase letters, symbols).
+-   Click the "Generate New" button to create a random string.
 
 2. Custom Format:
- <li>In the "Customize format here" input field, create a template using the following characters:</li>
-    'D' - Digits (0-9)
-    'C' - Capital Letters (A-Z)
-    'L' - Lowercase Letters (a-z)
-    'A' - Alphanumeric (Digits, Capital, and Lowercase Letters)
-    'S' - Symbols (!, @, #, $, %, &, \*)
-    'X' - Alphanumeric & Symbols (A, C, D, L, S)
-    '-' - Hyphen Divider
-    '_' - Underscore Divider
-    ':' - Colon Divider
- <li>Click the "Generate New" button to create an ID/password based on your custom format.</li>
+
+-   In the "Customize format here" input field, create a template using the following characters:
+    -   'D' - Digits (0-9)
+    -   'C' - Capital Letters (A-Z)
+    -   'L' - Lowercase Letters (a-z)
+    -   'A' - Alphanumeric (Digits, Capital, and Lowercase Letters)
+    -   'S' - Symbols (!, @, #, $, %, &, \*)
+    -   'X' - Alphanumeric & Symbols (A, C, D, L, S)
+    -   '-' - Hyphen Divider
+    -   '\_' - Underscore Divider
+    -   ':' - Colon Divider
+-   Click the "Generate New" button to create an ID/password based on your custom format.
 
 ## Contributing
 
