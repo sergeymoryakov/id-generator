@@ -1,17 +1,15 @@
 html {
     font-family: "Open Sans", sans-serif;
     font-size: 0.75em;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #1a1f16;
+    background-color: #ededed;
 }
 
 .container {
     margin: 0 auto;
     padding: 1rem;
     min-width: 240px;
-    max-width: 450px;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 260px) {
@@ -24,11 +22,16 @@ html {
     html {
         font-size: 1em;
     }
+
+    .container {
+        max-width: 450px;
+    }
 }
 
 h2 {
     margin-bottom: 0.5em;
     font-size: 1.25rem;
+    line-height: 1.5rem;
     font-weight: 700;
 }
 
@@ -53,18 +56,17 @@ li {
     line-height: 1.5em;
     font-size: 1rem;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
+    border: 1px solid #1a1f16;
 }
 
 .input2 {
     margin: 0.5em auto;
+    /* padding: 0 0.5em; */
     width: calc(100% - 9px);
     font-size: 1rem;
     line-height: 1.5em;
     text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
+    border: 1px solid #1a1f16;
 }
 
 .id-wrapper {
@@ -73,33 +75,24 @@ li {
 
 .id {
     margin-bottom: 0.5em;
-    width: 100%;
+    min-width: 100%;
     font-size: 1rem;
     font-weight: 700;
     line-height: 2em;
     text-align: center;
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
+    background-color: #ededed;
 }
 
 .new-btn {
     margin-bottom: 0.5em;
     width: 100%;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.5rem;
     background-color: #fff;
-    border: 1px solid #333;
-    border-radius: 0.25rem;
+    border: 1px solid #1a1f16;
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-
-.new-btn:hover {
-    background-color: #333;
-    color: #fff;
-    border-color: transparent;
 }
 
 .types-list {

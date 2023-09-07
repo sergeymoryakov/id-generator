@@ -1,5 +1,5 @@
-const DEFAULT_LENGHT = 20;
-const DEFAULT_FORMAT = "DDdd-CCcc_llLL:AAaa-ssSS_xxXX";
+const DEFAULT_LENGHT = 12;
+const DEFAULT_FORMAT = "DDCDDDDCDD-DD";
 
 window.capitals = [
     "A",
@@ -62,8 +62,19 @@ window.symbols = ["!", "@", "#", "$", "%", "&", "*"];
 
 const charactersAlfa = digits.concat("", capitals, lowercases);
 const charactersXray = charactersAlfa.concat("", symbols);
-console.log("charactersXray: ", charactersXray);
 let customCharactersArray = [];
+
+const FORMAT_CHARACTERS = {
+    D: () => randomFromArray(digits),
+    C: () => randomFromArray(capitals),
+    L: () => randomFromArray(lowercases),
+    A: () => randomFromArray(charactersAlfa),
+    S: () => randomFromArray(symbols),
+    X: () => randomFromArray(charactersXray),
+    "-": () => "-",
+    _: () => "_",
+    ":": () => ":",
+};
 
 const input1Node = document.getElementById("input1");
 const id1Node = document.getElementById("id1");
@@ -72,8 +83,6 @@ const checkboxes = document.querySelectorAll(".checkbox-1");
 const input2Node = document.getElementById("input2");
 const id2Node = document.getElementById("id2");
 const id2BtnNode = document.getElementById("id2Btn");
-
-const testBtnNode = document.getElementById("testBtn");
 
 // Generate string-type ID based on required length and array with options:
 function generateId1(lengthId, array) {
@@ -97,7 +106,7 @@ function updateCustomCharactersArray() {
             atLeastOneChecked = true;
         }
     });
-    // Make sure at least one checkbox is checked
+    // Make sure at least one checkbox is checked:
     if (!atLeastOneChecked) {
         alert("Please select at least one option.");
         checkboxes[0].checked = true;
@@ -107,75 +116,53 @@ function updateCustomCharactersArray() {
     console.log(customCharactersArray);
 }
 
+// Generate random character from specific array:
 function randomFromArray(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+// Generate new string based on example format:
 function generateId2(string) {
     const capString = string.toUpperCase();
-    let newId2 = "";
+    let newId2Array = [];
+
     for (let i = 0; i < capString.length; i++) {
-        switch (capString[i]) {
-            case "D":
-                newId2 += randomFromArray(digits);
-                break;
-            case "C":
-                newId2 += randomFromArray(capitals);
-                break;
-            case "L":
-                newId2 += randomFromArray(lowercases);
-                break;
-            case "A":
-                newId2 += randomFromArray(charactersAlfa);
-                break;
-            case "S":
-                newId2 += randomFromArray(symbols);
-                break;
-            case "X":
-                newId2 += randomFromArray(charactersXray);
-                break;
-            case "-":
-                newId2 += "-";
-                break;
-            case "_":
-                newId2 += "_";
-                break;
-            case ":":
-                newId2 += ":";
-                break;
-            default:
-                console.log("TEST PASSED");
-                newId2 += "=";
+        const formatCharacter = capString[i];
+        if (FORMAT_CHARACTERS.hasOwnProperty(formatCharacter)) {
+            newId2Array.push(FORMAT_CHARACTERS[formatCharacter]());
+        } else {
+            alert(
+                "Unaccepted characters in custom-formatting section: " +
+                    formatCharacter
+            );
+            console.log(
+                "Unaccepted characters in custom-formatting section: " +
+                    formatCharacter
+            );
+            return "UNACCEPTED FORMAT";
         }
     }
-    return newId2;
+    return newId2Array.join("");
 }
 
-// Initial rendering
+// Initial rendering:
 input1Node.value = DEFAULT_LENGHT;
 updateCustomCharactersArray();
-// const id1 = generateId1(DEFAULT_LENGHT, customCharactersArray);
-// console.log("ID1: ", id1);
-// id1Node.innerText = id1;
 id1Node.innerText = generateId1(DEFAULT_LENGHT, customCharactersArray);
+
 input2Node.value = DEFAULT_FORMAT;
 id2Node.innerText = generateId2(input2Node.value);
-// console.log("ID1: ", id1);
-// console.log("id1Node.value: ", input1Node.value);
 
-id1BtnNode.addEventListener("click", () => {
-    id1Node.innerText = "";
-    const newLenght = parseInt(input1Node.value);
-    console.log("newLenght: ", newLenght);
-    const newId1 = generateId1(newLenght, customCharactersArray);
-    id1Node.innerText = newId1;
-});
-
+// Execution and event listeners:
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", () => updateCustomCharactersArray());
 });
 
+id1BtnNode.addEventListener("click", () => {
+    const newLenght = parseInt(input1Node.value);
+    id1Node.innerText = generateId1(newLenght, customCharactersArray);
+});
+
 id2BtnNode.addEventListener("click", () => {
-    // id2Node.innerText = "";
     id2Node.innerText = generateId2(input2Node.value);
 });
