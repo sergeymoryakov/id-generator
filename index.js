@@ -1,4 +1,5 @@
 const DEFAULT_LENGHT = 20;
+const DEFAULT_FORMAT = "DDdd-CCcc_llLL:AAaa-ssSS_xxXX";
 
 window.capitals = [
     "A",
@@ -106,34 +107,32 @@ function updateCustomCharactersArray() {
     console.log(customCharactersArray);
 }
 
-function generateCustomID(string) {
+function randomFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function generateId2(string) {
     const capString = string.toUpperCase();
     let newId2 = "";
     for (let i = 0; i < capString.length; i++) {
         switch (capString[i]) {
             case "D":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(digits);
                 break;
             case "C":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(capitals);
                 break;
             case "L":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(lowercases);
                 break;
             case "A":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(charactersAlfa);
                 break;
             case "S":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(symbols);
                 break;
             case "X":
-                newId2 += "*";
-                // newId2 += capString[i];
+                newId2 += randomFromArray(charactersXray);
                 break;
             case "-":
                 newId2 += "-";
@@ -155,9 +154,13 @@ function generateCustomID(string) {
 // Initial rendering
 input1Node.value = DEFAULT_LENGHT;
 updateCustomCharactersArray();
-const id1 = generateId1(DEFAULT_LENGHT, customCharactersArray);
+// const id1 = generateId1(DEFAULT_LENGHT, customCharactersArray);
 // console.log("ID1: ", id1);
-id1Node.innerText = id1;
+// id1Node.innerText = id1;
+id1Node.innerText = generateId1(DEFAULT_LENGHT, customCharactersArray);
+input2Node.value = DEFAULT_FORMAT;
+id2Node.innerText = generateId2(input2Node.value);
+// console.log("ID1: ", id1);
 // console.log("id1Node.value: ", input1Node.value);
 
 id1BtnNode.addEventListener("click", () => {
@@ -174,5 +177,5 @@ checkboxes.forEach((checkbox) => {
 
 id2BtnNode.addEventListener("click", () => {
     // id2Node.innerText = "";
-    id2Node.innerText = generateCustomID(input2Node.value);
+    id2Node.innerText = generateId2(input2Node.value);
 });
