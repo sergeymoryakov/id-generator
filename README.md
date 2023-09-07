@@ -1,46 +1,72 @@
-# id-generator
+# ID/Password Generator
 
-An ID generator and timestamp converter.
+![ID/Password Generator Logo](./m-gold-s.png)
 
-## Generate Unique ID
+The ID/Password Generator is a versatile tool designed to generate random strings, passwords, and IDs for various applications, including eCommerce databases. Whether you need realistic-looking part numbers, serial numbers, invoice numbers, or transaction IDs, this app can help you quickly create the data you need.
 
-Generate a unique random ID string.
-Reference: https://www.npmjs.com/package/generate-unique-id
+## Table of Contents
 
-### Installation
+    -   [ID/Password Generator](#idpassword-generator)
+    -   [Table of Contents](#table-of-contents)
+    -   [Features](#features)
+    -   [String-Type ID/Password](#string-type-idpassword)
+    -   [Custom Format](#custom-format)
+    -   [Installation](#installation)
+    -   [Usage](#usage)
+    -   [Contributing](#contributing)
+    -   [License](#license)
 
-<code>npm i generate-unique-id</code>
+## Features
 
-### Usage
+### String-Type ID/Password
 
-<code>
-const generateUniqueId = require('generate-unique-id');
+-   Generate random strings with customizable length.
+-   Choose elements to include in the string: digits (0-9), capital letters (A-Z), lowercase letters (a-z), and symbols (!, @, #, $, %, &, \*).
+-   Create IDs and passwords for various purposes.
 
-// example 1
-const id1 = generateUniqueId();
+### Custom Format
 
-// example 2
-const id2 = generateUniqueId({
-length: 32,
-useLetters: false
-});
+-   Customize the format of your IDs and passwords using a template.
+-   Define which types of characters (digits, capitals, lowercase letters, symbols) should appear at specific positions in the template.
+-   Generate IDs and passwords based on your custom format.
 
-// example 3
-const id3 = generateUniqueId({
-includeSymbols: ['@','#','|'],
-excludeSymbols: ['0']
-});
-</code>
+## Installation
 
-### Options
+1. Clone this repository to your local machine: <code>git clone https://github.com/your-username/id-password-generator.git</code>
+2. Navigate to the project directory: <code>cd id-password-generator</code>
+3. Open the index.html file in your web browser to use the app.
 
-Option Type Default Description
-length number 20 Length of the generated ID.
-useLetters boolean true Use letters (English alphabet) as part of the generated ID.
-useNumbers boolean true Use numbers as part of the generated ID.
-includeSymbols array [] Use additional letters as part of the generated ID.
-excludeSymbols array [] Do not use these symbols as part of the generated ID.
+## Usage
 
-### License
+1. String-Type ID/Password:
+ <li>Enter the desired length for your ID/password in the "Select ID length (1...30)" input field.</li>
+ <li>Customize the elements you want to include by checking or unchecking the options (digits, capitals, lowercase letters, symbols).</li>
+ <li>Click the "Generate New" button to create a random string.</li>
 
-MIT license
+2. Custom Format:
+ <li>In the "Customize format here" input field, create a template using the following characters:</li>
+    'D' - Digits (0-9)
+    'C' - Capital Letters (A-Z)
+    'L' - Lowercase Letters (a-z)
+    'A' - Alphanumeric (Digits, Capital, and Lowercase Letters)
+    'S' - Symbols (!, @, #, $, %, &, \*)
+    'X' - Alphanumeric & Symbols (A, C, D, L, S)
+    '-' - Hyphen Divider
+    '_' - Underscore Divider
+    ':' - Colon Divider
+ <li>Click the "Generate New" button to create an ID/password based on your custom format.</li>
+
+## Contributing
+
+If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository on GitHub.
+2. Clone your forked repository to your local machine.
+3. Create a new branch for your feature or bug fix: <code>git checkout -b feature/your-feature-name</code>
+4. Make your changes and commit them: <code>git commit -m "Add your feature description or bug fix description"</code>
+5. Push your changes to your forked repository: <code>git push origin feature/your-feature-name</code>
+6. Create a pull request on GitHub.
+
+## License
+
+This project is licensed under the MIT License.
