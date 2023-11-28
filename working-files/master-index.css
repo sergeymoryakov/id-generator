@@ -5,17 +5,8 @@ html {
     background-color: #f4f4f4;
 }
 
-body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-}
-
 .container {
-    /* margin: 0 auto; */
+    margin: 0 auto;
     padding: 1rem;
     min-width: 240px;
     max-width: 450px;
