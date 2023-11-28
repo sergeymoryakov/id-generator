@@ -1,6 +1,7 @@
-export const DEFAULT_LENGTH = 12;
-export const DEFAULT_FORMAT = "DDCDDDDCDD-DD";
-export const capitals = [
+export const DEFAULT_LENGTH: number = 12;
+export const DEFAULT_FORMAT: string = "DDCDDDDCDD-DD";
+
+export const capitals: string[] = [
     "A",
     "B",
     "C",
@@ -28,7 +29,8 @@ export const capitals = [
     "Y",
     "Z",
 ];
-export const lowercases = [
+
+export const lowercases: string[] = [
     "a",
     "b",
     "c",
@@ -56,7 +58,8 @@ export const lowercases = [
     "y",
     "z",
 ];
-export const digits = [
+
+export const digits: string[] = [
     "0",
     "1",
     "2",
@@ -68,10 +71,24 @@ export const digits = [
     "8",
     "9",
 ];
-export const symbols = ["!", "@", "#", "$", "%", "&", "*"];
-export const charactersAlfa = digits.concat("", capitals, lowercases);
-export const charactersXray = charactersAlfa.concat("", symbols);
-export const FORMAT_CHARACTERS = {
+export const symbols: string[] = ["!", "@", "#", "$", "%", "&", "*"];
+
+export const charactersAlfa: string[] = digits.concat("", capitals, lowercases);
+export const charactersXray: string[] = charactersAlfa.concat("", symbols);
+
+type TFORMAT_CHARACTERS = {
+    D: () => string;
+    C: () => string;
+    L: () => string;
+    A: () => string;
+    S: () => string;
+    X: () => string;
+    "-": () => string;
+    _: () => string;
+    ":": () => string;
+};
+
+export const FORMAT_CHARACTERS: TFORMAT_CHARACTERS = {
     D: () => randomFromArray(digits),
     C: () => randomFromArray(capitals),
     L: () => randomFromArray(lowercases),
@@ -82,7 +99,8 @@ export const FORMAT_CHARACTERS = {
     _: () => "_",
     ":": () => ":",
 };
+
 // Generate random character from specific array:
-function randomFromArray(array) {
+function randomFromArray<T>(array: T[]): T {
     return array[Math.floor(Math.random() * array.length)];
 }
