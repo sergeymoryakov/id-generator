@@ -1,10 +1,80 @@
-import {
-    DEFAULT_LENGHT,
-    DEFAULT_FORMAT,
-    FORMAT_CHARACTERS,
-} from "./config/constants.js";
+const DEFAULT_LENGHT = 12;
+const DEFAULT_FORMAT = "DDCDDDDCDD-DD";
 
+window.capitals = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+];
+window.lowercases = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+];
+window.digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+window.symbols = ["!", "@", "#", "$", "%", "&", "*"];
+
+const charactersAlfa = digits.concat("", capitals, lowercases);
+const charactersXray = charactersAlfa.concat("", symbols);
 let customCharactersArray = [];
+
+const FORMAT_CHARACTERS = {
+    D: () => randomFromArray(digits),
+    C: () => randomFromArray(capitals),
+    L: () => randomFromArray(lowercases),
+    A: () => randomFromArray(charactersAlfa),
+    S: () => randomFromArray(symbols),
+    X: () => randomFromArray(charactersXray),
+    "-": () => "-",
+    _: () => "_",
+    ":": () => ":",
+};
 
 const input1Node = document.getElementById("input1");
 const id1Node = document.getElementById("id1");
@@ -44,6 +114,11 @@ function updateCustomCharactersArray() {
         return;
     }
     console.log(customCharactersArray);
+}
+
+// Generate random character from specific array:
+function randomFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
 }
 
 // Generate new string based on example format:
