@@ -8,7 +8,6 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
     -   [Table of Contents](#table-of-contents)
     -   [Features](#features)
         -   [String-Type ID/Password](#string-type-idpassword)
-        -   [Custom Format](#custom-format)
     -   [Installation](#installation)
     -   [Usage](#usage)
     -   [Contributing](#contributing)
@@ -21,12 +20,13 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
 -   Generate random strings with customizable length.
 -   Choose elements to include in the string: digits (0-9), capital letters (A-Z), lowercase letters (a-z), and symbols (!, @, #, $, %, &, \*).
 -   Create IDs and passwords for various purposes.
+<!--
 
 ### Custom Format
 
 -   Customize the format of your IDs and passwords using a template.
 -   Define which types of characters (digits, capitals, lowercase letters, symbols) should appear at specific positions in the template.
--   Generate IDs and passwords based on your custom format.
+-   Generate IDs and passwords based on your custom format. -->
 
 ## Installation
 
@@ -43,6 +43,7 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
 -   Enter the desired length for your ID/password in the "Select ID length (1...30)" input field.
 -   Customize the elements you want to include by checking or unchecking the options (digits, capitals, lowercase letters, symbols).
 -   Click the "Generate New" button to create a random string.
+<!--
 
 2. Custom Format:
 
@@ -56,7 +57,7 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
     -   '-' - Hyphen Divider
     -   '\_' - Underscore Divider
     -   ':' - Colon Divider
--   Click the "Generate New" button to create an ID/password based on your custom format.
+-   Click the "Generate New" button to create an ID/password based on your custom format. -->
 
 ## Contributing
 
