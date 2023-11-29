@@ -24,9 +24,9 @@ const checkboxes = document.querySelectorAll(
 
 // Generate string-type ID based on required length and array with options:
 function generateId1(lengthId: number, array: string[]): string {
-    let newId1 = "";
-    const lengthArray = array.length;
-    for (let i = 0; i < lengthId; i++) {
+    let newId1: string = "";
+    const lengthArray: number = array.length;
+    for (let i: number = 0; i < lengthId; i++) {
         newId1 += array[Math.floor(Math.random() * lengthArray)];
     }
     return newId1;
@@ -35,12 +35,12 @@ function generateId1(lengthId: number, array: string[]): string {
 // Initiate or update charactersData for string-type ID:
 function updateCustomCharactersArray(): void {
     customCharactersArray = [];
-    let atLeastOneChecked = false;
+    let atLeastOneChecked: boolean = false;
     checkboxes.forEach((checkbox) => {
         if (checkbox.checked) {
-            const arrayName = checkbox.getAttribute("id");
+            const arrayName: string | null = checkbox.getAttribute("id");
             if (arrayName && arrayMapping[arrayName]) {
-                const affectedArray = arrayMapping[arrayName];
+                const affectedArray: string[] = arrayMapping[arrayName];
                 customCharactersArray =
                     customCharactersArray.concat(affectedArray);
                 atLeastOneChecked = true;
@@ -74,7 +74,7 @@ checkboxes.forEach((checkbox) => {
 
 if (id1BtnNode && input1Node && id1Node) {
     id1BtnNode.addEventListener("click", () => {
-        const newLength = parseInt(input1Node.value, 10);
+        const newLength: number = parseInt(input1Node.value, 10);
         id1Node.innerText = generateId1(newLength, customCharactersArray);
     });
 }
