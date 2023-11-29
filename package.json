@@ -1,0 +1,22 @@
+{
+    "name": "id-generator",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "The ID/Password Generator is a tool designed to generate random passwords and IDs for various applications, including eCommerce databases. Whether you need realistic-looking part numbers, serial numbers, invoice numbers, or transaction IDs, this app can help you quickly create the data you need.",
+    "main": "index.js",
+    "scripts": {
+        "start": "npm run dev",
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview",
+        "preview": "vite preview",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^5.3.2",
+        "vite": "^5.0.3"
+    }
+}
