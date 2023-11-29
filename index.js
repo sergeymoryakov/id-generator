@@ -1,10 +1,4 @@
-import {
-    DEFAULT_LENGTH,
-    capitals,
-    lowercases,
-    digits,
-    symbols,
-} from "./config/constants.js";
+import { DEFAULT_LENGTH, capitals, lowercases, digits, symbols, } from "./config/constants.js";
 const arrayMapping = {
     capitals: capitals,
     lowercases: lowercases,
@@ -47,7 +41,8 @@ function updateCustomCharactersArray() {
         updateCustomCharactersArray(); // Recall self to make sure customCharactersArray is properly updated
         return;
     }
-    console.log(customCharactersArray);
+    // For Debugging and Testing:
+    // console.log(customCharactersArray);
 }
 // Initial rendering:
 if (input1Node) {

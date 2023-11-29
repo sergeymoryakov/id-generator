@@ -69,3 +69,21 @@ export const digits = [
     "9",
 ];
 export const symbols = ["!", "@", "#", "$", "%", "&", "*"];
+// Constants for Custom Password/ID Generator:
+export const charactersAlfa = digits.concat("", capitals, lowercases);
+export const charactersXray = charactersAlfa.concat("", symbols);
+export const FORMAT_CHARACTERS = {
+    D: () => randomFromArray(digits),
+    C: () => randomFromArray(capitals),
+    L: () => randomFromArray(lowercases),
+    A: () => randomFromArray(charactersAlfa),
+    S: () => randomFromArray(symbols),
+    X: () => randomFromArray(charactersXray),
+    "-": () => "-",
+    _: () => "_",
+    ":": () => ":",
+};
+// Generate random character from specific array:
+function randomFromArray(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}

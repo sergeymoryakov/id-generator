@@ -1,6 +1,5 @@
-html {
+:root {
     font-family: "Open Sans", sans-serif;
-    font-size: 0.75em;
     color: #333;
     background-color: #f4f4f4;
 }
@@ -11,16 +10,16 @@ body {
     justify-content: center;
     place-items: center;
     min-width: 320px;
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 .container {
-    /* margin: 0 auto; */
-    padding: 1rem;
+    padding: 1em;
     min-width: 240px;
     max-width: 450px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
 }
 
 @media (min-width: 260px) {

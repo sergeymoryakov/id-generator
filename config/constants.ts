@@ -72,35 +72,3 @@ export const digits: string[] = [
     "9",
 ];
 export const symbols: string[] = ["!", "@", "#", "$", "%", "&", "*"];
-
-export const charactersAlfa: string[] = digits.concat("", capitals, lowercases);
-export const charactersXray: string[] = charactersAlfa.concat("", symbols);
-
-type TFORMAT_CHARACTERS = {
-    D: () => string;
-    C: () => string;
-    L: () => string;
-    A: () => string;
-    S: () => string;
-    X: () => string;
-    "-": () => string;
-    _: () => string;
-    ":": () => string;
-};
-
-export const FORMAT_CHARACTERS: TFORMAT_CHARACTERS = {
-    D: () => randomFromArray(digits),
-    C: () => randomFromArray(capitals),
-    L: () => randomFromArray(lowercases),
-    A: () => randomFromArray(charactersAlfa),
-    S: () => randomFromArray(symbols),
-    X: () => randomFromArray(charactersXray),
-    "-": () => "-",
-    _: () => "_",
-    ":": () => ":",
-};
-
-// Generate random character from specific array:
-function randomFromArray<T>(array: T[]): T {
-    return array[Math.floor(Math.random() * array.length)];
-}

@@ -4,7 +4,7 @@ import {
     lowercases,
     digits,
     symbols,
-} from "./config/constants";
+} from "./config/constants.js";
 
 const arrayMapping: { [key: string]: string[] } = {
     capitals: capitals,
@@ -54,7 +54,8 @@ function updateCustomCharactersArray(): void {
         updateCustomCharactersArray(); // Recall self to make sure customCharactersArray is properly updated
         return;
     }
-    console.log(customCharactersArray);
+    // For Debugging and Testing:
+    // console.log(customCharactersArray);
 }
 
 // Initial rendering:
