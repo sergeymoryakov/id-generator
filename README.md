@@ -8,7 +8,6 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
     -   [Table of Contents](#table-of-contents)
     -   [Features](#features)
         -   [String-Type ID/Password](#string-type-idpassword)
-    -   [Installation](#installation)
     -   [Usage](#usage)
     -   [License](#license)
 
@@ -20,17 +19,11 @@ The ID/Password Generator is a tool designed to generate random passwords and ID
 -   Choose elements to include in the string: digits (0-9), capital letters (A-Z), lowercase letters (a-z), and symbols (!, @, #, $, %, &, \*).
 -   Create IDs and passwords for various purposes.
 
-## Installation
-
-1. Clone this repository to your local machine:
-   <code>git clone https://github.com/sergeymoryakov/id-generator.git</code>
-2. Navigate to the project directory:
-   <code>cd id-generator</code>
-3. Open the index.html file in your web browser to use the app.
-
 ## Usage
 
-1. String-Type ID/Password:
+1. Start Application: https://sergeymoryakov.github.io/id-generator/
+
+2. generate String-Type ID/Password:
 
 -   Enter the desired length for your ID/password in the "Select ID length (1...30)" input field.
 -   Customize the elements you want to include by checking or unchecking the options (digits, capitals, lowercase letters, symbols).
