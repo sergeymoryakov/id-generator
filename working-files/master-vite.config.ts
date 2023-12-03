@@ -2,5 +2,9 @@ import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "/id-generator/",
+    base: "./",
+    build: {
+        outDir: "docs",
+    },
+    publicDir: false,
 });
